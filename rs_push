@@ -29,7 +29,7 @@ branch_name=${branch_name:-HEAD}
 echo "Current branch: ${branch_name}"
 sleep 2
 
-git push origin OPS-169_rightscripts_into_github_test || exit 1
+git push origin ${branch_name} || exit 1
 
 # this can be fragile...
 #if [[ -e .pushrc.${branch_name} ]]; then
@@ -201,13 +201,13 @@ if [[ "$html" =~ $re ]]; then
   re='scraped revision ([0-9a-f]*)'
   if [[ "${detail}" =~ $re ]]; then
     rev="${BASH_REMATCH[1]}"
-    if [[ "$rev" != "$sha" ]]; then
-      echo "********** OOPS, the SHAs don't match:"
-      echo "Latest local commit is ${sha}"
-      echo "Scraped revision is    ${rev}"
-      echo "Perhaps RS ignored the refetch request because a refetch"
-      echo "was already running (but on an older commit)?"
-    fi
+#    if [[ "$rev" != "$sha" ]]; then
+#      echo "********** OOPS, the SHAs don't match:"
+#      echo "Latest local commit is ${sha}"
+#      echo "Scraped revision is    ${rev}"
+#      echo "Perhaps RS ignored the refetch request because a refetch"
+#      echo "was already running (but on an older commit)?"
+#    fi
   fi
 else
   echo "===== DETAIL (sorry, raw html) ====="
