@@ -21,7 +21,7 @@ attribute   "HOSTNAME",
   :required => "optional",
   :type => "string",
   #:default => "env:RS_SERVER_NAME",
-  :default => "lala"
+  :default => "lala",
   #:recipes => ["rll::init","rll::SYS_set_hostname"]
   :recipes => ["rll::SYS_set_hostname"]
 
