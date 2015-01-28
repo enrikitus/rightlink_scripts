@@ -20,7 +20,8 @@ attribute   "HOSTNAME",
 	"Set to an empty string to avoid any change to the hostname.",
   :required => "optional",
   :type => "string",
-  :default => "env:RS_SERVER_NAME",
+  #:default => "env:RS_SERVER_NAME",
+  :default => "lala"
   #:recipes => ["rll::init","rll::SYS_set_hostname"]
   :recipes => ["rll::SYS_set_hostname"]
 
