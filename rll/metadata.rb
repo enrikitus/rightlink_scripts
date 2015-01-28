@@ -10,7 +10,7 @@ recipe      "rll::collectd", "Installs and configures collectd for RightScale mo
 recipe      "rll::upgrade", "Check whether a RightLink upgrade is available and do the upgrade"
 recipe      "rll::test-script", "Test operational script, doesn't do anything useful"
 recipe      "rll::shutdown-reason", "Print out the reason for shutdown"
-recipe      "rll::enric-rightscript-test-show-env", "Show env vars"
+recipe      "rll::enric-rightscript-test-show-env", "Show env variables"
 
 attribute   "HOSTNAME",
   :display_name => "Hostname for this server",
@@ -35,7 +35,7 @@ attribute   "RS_INSTANCE_UUID",
   :required => "optional",
   :type => "string",
   :default => "env:RS_INSTANCE_UUID",
-  :recipes => ["rll::collectd"]
+  :recipes => ["rll::collectd","rll:enric-rightscript-test-show-env"]
 
 attribute   "RLBIN",
   :display_name => "RightLink executable pathname",
