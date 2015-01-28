@@ -20,8 +20,9 @@ attribute   "HOSTNAME",
 	"Set to an empty string to avoid any change to the hostname.",
   :required => "optional",
   :type => "string",
-  :default => "env:RS_SERVER_NAME",
-  :recipes => ["rll::init"]
+#  :default => "env:RS_SERVER_NAME",
+  :default => "lalalal",
+  :recipes => ["rll::init","rll::SYS_set_hostname"]
 
 attribute   "COLLECTD_SERVER",
   :display_name => "RightScale monitoring server to send data to",
