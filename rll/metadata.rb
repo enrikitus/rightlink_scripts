@@ -1,10 +1,15 @@
 name        "rll"
-maintainer  "ops"
+maintainer  "Thorsten von Eicken"
 license     "see LICENSE file in repository root"
 description "Base scripts for RightLink10 (RLL) to initialize basic functionality"
 version     "10.0.1"
 
-recipe      "rll::show-env", "show env vars"
+recipe      "rll::wait-for-eip", "Wait for external IP address to be assigned (EC2 issue)"
+recipe      "rll::init", "Initializes repositories and minor RLL-related things"
+recipe      "rll::collectd", "Installs and configures collectd for RightScale monitoring"
+recipe      "rll::upgrade", "Check whether a RightLink upgrade is available and do the upgrade"
+recipe      "rll::test-script", "Test operational script, doesn't do anything useful"
+recipe      "rll::shutdown-reason", "Print out the reason for shutdown"
 
 attribute   "HOSTNAME",
   :display_name => "Hostname for this server",
@@ -15,4 +20,42 @@ attribute   "HOSTNAME",
   :required => "optional",
   :type => "string",
   :default => "env:RS_SERVER_NAME",
-  :recipes => ["rll::show-env"]
+  :recipes => ["rll::init"]
+
+attribute   "COLLECTD_SERVER",
+  :display_name => "RightScale monitoring server to send data to",
+  :required => "optional",
+  :type => "string",
+  :default => "env:RS_SKETCHY",
+  :recipes => ["rll::collectd"]
+
+attribute   "RS_INSTANCE_UUID",
+  :display_name => "RightScale monitoring ID for this server",
+  :required => "optional",
+  :type => "string",
+  :default => "env:RS_INSTANCE_UUID",
+  :recipes => ["rll::collectd"]
+
+attribute   "RLBIN",
+  :display_name => "RightLink executable pathname",
+  :description => "Location of the RighLink 10 executable file, typically /usr/local/bin/rightlinklite",
+  :required => "optional",
+  :type => "string",
+  :default => "/usr/local/bin/rightlinklite",
+  :recipes => ["rll::upgrade"]
+
+attribute   "VAR",
+  :display_name => "random variable to print",
+  :required => "recommended",
+  :type => "string",
+  :default => "test value",
+  :recipes => ["rll::test-script"]
+
+attribute   "CRED",
+  :display_name => "some credential",
+  :required => "recommended",
+  :type => "string",
+  :default => "cred:AWS_ACCESS_KEY_ID",
+  :recipes => ["rll::test-script"]
+
+

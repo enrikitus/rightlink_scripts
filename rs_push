@@ -181,7 +181,6 @@ while true; do
     "https://${RS_SERVER}/acct/${RS_ACCT}/audit_entries/$audit_id"`
   re='Summary</label><div>([^<]*)<'
   if [[ "$html" =~ $re ]]; then
-echo "DINS"
     summary="${BASH_REMATCH[1]}"
     t1=$(( `date '+%s'` - $t0 ))
     echo "${t1}s Summary: ${summary}"
