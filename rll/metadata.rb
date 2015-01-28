@@ -2,7 +2,7 @@ name        "rll"
 maintainer  "Thorsten von Eicken"
 license     "see LICENSE file in repository root"
 description "Base scripts for RightLink10 (RLL) to initialize basic functionality"
-version     "10.0.1"
+version     "10.0.2"
 
 recipe      "rll::wait-for-eip", "Wait for external IP address to be assigned (EC2 issue)"
 recipe      "rll::init", "Initializes repositories and minor RLL-related things"
@@ -10,6 +10,7 @@ recipe      "rll::collectd", "Installs and configures collectd for RightScale mo
 recipe      "rll::upgrade", "Check whether a RightLink upgrade is available and do the upgrade"
 recipe      "rll::test-script", "Test operational script, doesn't do anything useful"
 recipe      "rll::shutdown-reason", "Print out the reason for shutdown"
+recipe      "rll::enric-rightscript-test-show-env", "Show env vars"
 
 attribute   "HOSTNAME",
   :display_name => "Hostname for this server",
@@ -57,5 +58,12 @@ attribute   "CRED",
   :type => "string",
   :default => "cred:AWS_ACCESS_KEY_ID",
   :recipes => ["rll::test-script"]
+
+attribute   "NEW_VAR",
+  :display_name => "some credential",
+  :required => "recommended",
+  :type => "string",
+  :default => "cred:AWS_ACCESS_KEY_ID",
+  :recipes => ["rll::enric-rightscript-test-show-env"]
 
 
