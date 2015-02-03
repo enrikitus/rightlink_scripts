@@ -11,6 +11,7 @@ recipe      "rll::upgrade", "Check whether a RightLink upgrade is available and 
 recipe      "rll::test-script", "Test operational script, doesn't do anything useful"
 recipe      "rll::shutdown-reason", "Print out the reason for shutdown"
 recipe      "rll::enric-rightscript-test-show-env", "Show env variables"
+recipe      "rll::enric-rightscript-test-show-env2", "Show env variables"
 
 attribute   "HOSTNAME",
   :display_name => "Hostname for this server",
