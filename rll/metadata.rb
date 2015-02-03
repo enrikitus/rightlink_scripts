@@ -68,7 +68,7 @@ attribute   "NEW_VAR",
   :recipes => ["rll::enric-rightscript-test-show-env"]
 
 attribute   "NEW_CRED",
-  :display_name => "dbadmin user credential",
+  :display_name => "lala dbadmin user credential",
   :required => "recommended",
   :type => "string",
   :default => cred:NEW_CRED,
