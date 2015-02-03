@@ -66,4 +66,11 @@ attribute   "NEW_VAR",
   :default => "cred:AWS_ACCESS_KEY_ID",
   :recipes => ["rll::enric-rightscript-test-show-env"]
 
+attribute   "NEW_CRED",
+  :display_name => "dbadmin user credential",
+  :required => "recommended",
+  :type => "string",
+  :default => "cred:NEW_CRED",
+  :recipes => ["rll::enric-rightscript-test-show-env2"]
+
 
