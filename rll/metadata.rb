@@ -71,5 +71,5 @@ attribute   "NEW_CRED",
   :display_name => "lala dbadmin user credential",
   :required => "recommended",
   :type => "string",
-  :default => cred:NEW_CRED,
+  :default => "cred:AWS_ACCESS_KEY_ID",
   :recipes => ["rll::enric-rightscript-test-show-env2"]
