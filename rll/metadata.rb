@@ -60,9 +60,9 @@ attribute   "CRED",
   :default => "cred:AWS_ACCESS_KEY_ID",
   :recipes => ["rll::test-script"]
 
-attribute   "NEW_VAR",
+attribute   "NEW_CRED",
   :display_name => "some credential",
   :required => "recommended",
   :type => "string",
   :default => "cred:AWS_ACCESS_KEY_ID",
-  :recipes => ["rll::enric-rightscript-test-show-env"]
+  :recipes => ["rll::enric-rightscript-test-show-env2"]
