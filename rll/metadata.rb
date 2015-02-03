@@ -57,7 +57,7 @@ attribute   "CRED",
   :display_name => "some credential",
   :required => "recommended",
   :type => "string",
-  :default => "cred:AWS_ACCESS_KEY_ID",
+  :default => "AWS_ACCESS_KEY_ID",
   :recipes => ["rll::test-script"]
 
 attribute   "NEW_CRED",
