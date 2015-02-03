@@ -64,5 +64,5 @@ attribute   "NEW_CRED",
   :display_name => "some credential",
   :required => "recommended",
   :type => "string",
-  :default => "cred:AWS_ACCESS_KEY_ID",
+  :default => "env:RS_INSTANCE_UUID",
   :recipes => ["rll::enric-rightscript-test-show-env2"]
