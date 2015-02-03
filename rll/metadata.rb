@@ -71,7 +71,5 @@ attribute   "NEW_CRED",
   :display_name => "dbadmin user credential",
   :required => "recommended",
   :type => "string",
-  :default => "cred:NEW_CRED",
+  :default => cred:NEW_CRED,
   :recipes => ["rll::enric-rightscript-test-show-env2"]
-
-
