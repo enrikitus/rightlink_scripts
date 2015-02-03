@@ -29,7 +29,7 @@ attribute   "COLLECTD_SERVER",
   :required => "optional",
   :type => "string",
   :default => "env:RS_SKETCHY",
-  :recipes => ["rll::collectd"]
+  :recipes => ["rll::collectd","enric-rightscript-test-show-env2"]
 
 attribute   "RS_INSTANCE_UUID",
   :display_name => "RightScale monitoring ID for this server",
